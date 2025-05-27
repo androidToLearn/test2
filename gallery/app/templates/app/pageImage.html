@@ -1,0 +1,12 @@
+{% extends 'app/page1.html' %}
+{% block title %}add{% endblock %}
+{% block content %}
+
+<form action="{% url 'index1'%}" method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.image|add_class:"classImage" }}
+
+    <input type="submit" value="upload">
+</form>
+{% endblock %}
